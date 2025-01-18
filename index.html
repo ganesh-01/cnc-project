@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNC landing Page</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: Poppins, sans-serif;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .nav {
+            width: 100vw;
+            /* padding: 20px; */
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .logo-header{
+            width: inherit;
+            padding: 10px;
+            padding-left: 40px;
+            display: flex;
+            background-color: rgb(32,93,155);
+            color: white;
+        }
+
+        .logo {
+            align-items: flex-start;
+            font-weight: 700;
+            font-size: 35px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-evenly;
+            border-bottom: 1px rgb(32,93,155) solid;
+            align-items: center;
+            list-style: none;
+            height:40px;
+            /* padding: 0px; */
+        }
+
+
+
+        .menu li {
+            position: relative; /* Required for dropdown positioning */
+            /* margin: 0 15px; */
+            
+        }
+        .menu-btn {
+            padding: 8px 10px;
+            align-items: center;
+            color: rgb(32,93,155);
+            text-decoration: none;
+            
+            transition: 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background-color: rgb(32,93,155); 
+            color: white;
+            transition: 0.3s ease;
+            display: block;
+            /* align-items: center; */
+        }
+
+        .dropdown i {
+            font-size: 0.8rem;
+        }
+
+/* Dropdown Styling */
+.nav .menu .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Aligns below the parent menu item */
+    left: 0%;
+    margin-top: 0px;
+    background: #333;
+    list-style: none;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.nav .menu .dropdown-menu li {
+    margin: 0;
+}
+
+.nav .menu .dropdown-menu li a {
+    display: block;
+    color: #fff;
+    border-bottom: 1px #222 solid;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.nav .menu .dropdown-menu li a:hover {
+    background: #616161;
+    color: white;
+}
+
+/* Show Dropdown on Hover */
+.nav .menu .dropdown:hover .dropdown-menu {
+    display: block; 
+    /* margin-top: 2px; */
+}
+
+.sub-dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0%; /* Aligns below the parent menu item */
+    left: 100%;
+    margin-top: 0px;
+    background: #444;
+    list-style: none;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-menu:hover .sub-dropdown-menu {
+    display: block;
+}
+
+
+
+
+/* Styles for medium mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    
+    .nav {
+        width: 768px;
+    }
+    .menu {
+        display: none;
+    }
+    .logo-header {
+        /* display: flex; */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        justify-content: flex-start;
+    }
+    .menu-icon {
+        display: flex;
+        justify-items: flex-end;
+        color: white;
+        font-size: 2rem;
+        margin-right: 100px;
+    }
+
+    
+}
+
+/* For desktop screen */
+@media (min-width: 1024px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+
+        
+    </style>
+
+</head>
+<body>
+    <div class="nav">
+        <div class="logo-header">
+            <div class="logo">OUR LOGO</div>
+        
+            <div class="menu-icon">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+        </div>
+        <ul class="menu">
+            <li><a href="#home" class="menu-btn">Home</a></li>
+            <li><a href="#about" class="menu-btn">About Us</a></li>
+            <li class="dropdown">
+                <a href="#services" class="menu-btn">Product
+                    &nbsp;<i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="" class="menu-btn">Product 1
+                        &nbsp;<i class="bi bi-chevron-right"></i>
+                        </a>
+                        <ul class="sub-dropdown-menu">
+                            <li><a href="" class="menu-btn">Product 1.1</a></li>
+                            <li><a href="" class="menu-btn">Product 1.2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="menu-btn">Product 2</a></li>
+                    <li><a href="" class="menu-btn">Product 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#services" class="menu-btn">Application</a></li>
+            <li><a href="#services" class="menu-btn">Certificate</a></li>
+            <li><a href="#team" class="menu-btn">News Release</a></li>
+            <li><a href="#contact" class="menu-btn">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- CAROUSEL SECTION -->
+
+    <!--  -->
+
+</body>
+</html>
