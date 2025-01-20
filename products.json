@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "name": "Ultrasonic cold sealing - WK05-30",
+        "specification": [
+            {
+                "Model": "WK05-30B",
+                "Description": "High Table Ultrasonic Banding Machine",
+                "Applicable Material": "OPP film/Paper band",
+                "Material Specification":"Width: 29.2-29.6mm,Thickness\n120mic, Length: 500meters \n Core: 76mm",
+                "Arch Size": "470 x 200mm",
+                "Banding Size": "Min: 50*10mm Max: 460*180mm",
+                "Power Supply": "220V 50hz 1phase or 110V 60hz 1phase",
+                "Power Rate": "450W",
+                "Control System": "PCB",
+                "Banding Speed": "24 bands/Minute",
+                "Banding Tension": "5-30N",
+                "Welding Method": "Ultrasonic Cold Welding",
+                "Generator Usage Life": "600,000 times",
+                "NW": "75kg",
+                "Machine Dimension": "L 644 x W 430 x H 1256mm"
+            },
+            {
+                "Model": "WK05-50B",
+                "Description": "High Table Ultrasonic Banding Machine",
+                "Applicable Material": "OPP film/Paper band",
+                "Material Specification":"Width: 49.2-49.6mm\nThickness: 120mic\nLength: 500meters, Core: 76mm",
+                "Arch Size": "470 x 200mm",
+                "Banding Size": "Min: 50*10mm Max: 460*180mm",
+                "Power Supply": "220V 50hz 1phase or 110V 60hz 1phase",
+                "Power Rate": "450W",
+                "Control System": "PCB",
+                "Banding Speed": "24 bands/Minute",
+                "Banding Tension": "5-30N",
+                "Welding Method": "Ultrasonic Cold Welding",
+                "Generator Usage Life": "600,000 times",
+                "NW": "75kg",
+                "Machine Dimension": "L 644 x W 430 x H 1256mm"
+            }
+        ],
+        "image": ["./images/1-1.jpeg", "./images/1-2.jpeg"],
+        "youtube":"https://www.youtube.com/embed/1Z4v46QEGgE",
+        "features":["No Pre-Heating time", "Ultrasonic cold welding", "No smoke,Environment friendly", "Can be used for humid or moisture environment", "Protect product from surface damage"]
+    }
+]
