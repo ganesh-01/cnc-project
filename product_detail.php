@@ -21,7 +21,8 @@ if (isset($_GET['id'])) {
     // Return the result
     if ($result) {
         $images = $result['image'];
-  echo $result['name']; }
+//   echo $result['name'];
+ }
     }
 ?>
 <html>
@@ -30,14 +31,17 @@ if (isset($_GET['id'])) {
     <title>Product Detail</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="carousel.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
+    <div class="header">
     <?php
     include 'header.html';
     ?>
-
+</div>
     <div class="bodyContainer">
         <div class="sideProducts">
         </div>
