@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test html</title>
+
+  <style>
+    /* Basic Card Styling */
+    *{
+      background-color: aquamarine;
+    }
+/* Basic Card Styling */
+.card {
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden; /* To ensure contents don't overflow the card when it moves */
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Card inner container (for front and back content) */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.card-front {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0; /* Light background for the front */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* Keep front content above the back content */
+  transition: transform 0.3s ease;
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #3498db; /* Solid background for the back */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%); /* Initially hide the back content */
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-text {
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Hover effect: slide up and reveal the card back */
+.card:hover .card-inner {
+  transform: translateY(-10px); /* Slightly move the card up */
+}
+
+.card:hover .card-front {
+  transform: scale(0.2);
+  /* top: ; */
+  transform: translateY(-50px); /* Move front content down a little */
+}
+
+.card:hover .card-back {
+  transform: translateY(0); /* Reveal the back content */
+  opacity: 1; /* Make back content visible */
+}
+
+/* Optional: Adding a small scale effect on hover */
+.card:hover {
+  transform: scale(1.05); /* Slight zoom-in on hover */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for the card text */
+.card-back:hover .card-text {
+  color: #fff; /* Optional text color change */
+}
+
+
+  </style>
+</head>
+<body style="">
+  
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <p>Main Content</p>
+      </div>
+      <div class="card-back">
+        <p class="card-text">Revealed Text</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+</body>
+</html>
+<script>
+  // Function to check if the card is in the viewport
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Select all card elements
+const cards = document.querySelectorAll('.card');
+
+// Function to add the 'visible' class to cards when they appear in the viewport
+function checkVisibility() {
+  cards.forEach(card => {
+    if (isInViewport(card)) {
+      card.classList.add('visible');
+    }
+  });
+}
+
+// Listen for scroll events
+window.addEventListener('scroll', checkVisibility);
+
+// Initially check visibility on page load
+document.addEventListener('DOMContentLoaded', () => {
+  checkVisibility();
+});
+
+</script>
