@@ -7,6 +7,9 @@
   <title>Product Categoory</title>
   <link rel="stylesheet" href="./styles.css">
   <style>
+    body{
+      scrollbar-width:none;
+    }
     .banner-img-container img{
       height: 20%;
       max-height: 200px;
@@ -124,33 +127,31 @@
     </div>
     <div class="cards-container">
     
-    <div class="category-card">
-      <div class="category-card-inner">
-        <div class="category-card-front">
-          <img src="./banding_machine.webp" alt="Avatar">
-        </div>
-        <div class="category-card-back">
-          <h1>Model Number</h1>
-          <p>Ultrasonic cold sealing machine</p>
-          <p>More button</p>
-        </div>
-      </div>
-    </div>
+    <?php
+// Read the JSON file
+$jsonData = file_get_contents('product_category.json');
 
-    <div class="category-card">
-      <div class="category-card-inner">
-        <div class="category-card-front">
-          <img src="./banding_machine.webp" alt="Avatar">
+// Decode JSON into an associative array
+$data = json_decode($jsonData, true);
+foreach ($data as $item) {
+echo "    <div class='category-card'>
+      <div class='category-card-inner'>
+        <div class='category-card-front'>
+          <img src='./banding_machine.webp' alt='Avatar'>
         </div>
-        <div class="category-card-back">
-          <h1>Model Number</h1>
-          <p>Ultrasonic cold banding machine</p>
-          <p>We love that guy</p>
+        <div class='category-card-back'>
+          <h1>".$item['modelNo']."</h1>
+          <p>".$item['model']."</p>
+          <a href='./product_detail.php?id=".$item['productId']."'>View Details</a>
         </div>
-      </div>
-    </div>
+        </div>
+    </div>";}
 
-    <div class="category-card">
+
+?>
+
+
+    <!-- <div class="category-card">
       <div class="category-card-inner">
         <div class="category-card-front">
           <img src="./banding_machine.webp" alt="Avatar">
@@ -257,7 +258,7 @@
           <p>We love that guy</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     </div>
   </section>
